@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;100&display=swap');
+@import url('https://fonts.google.com/noto/specimen/Noto+Serif+JP?preview.text=kohi');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+:root{
+    --main-color: #54372a;
+    --second-color: #6f4e37;
+    --text-color: #060413;
+    --container-color: #f8e4be;
+    --bg-color:#ddc0b4;
+    --text-alter-color: #94908e;
+    --noto-font: 'Noto Sans Japanese';
+
+}
+
+body{
+    color: var(--text-color-color);
+    background: var(--bg-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+section{
+    padding: 3rem 0 2rem;
+}
+
+.nav-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+header{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 17px 20px;
+    border-radius: 2rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:#ddbe9b;
+    font-family: 'Noto Sans Japanese';
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 0.88rem;
+    color: #ddbe9b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav-icons .bx{
+    color: #ddbe9b;
+    font-size: 20px;
+}
+
+.nav-icons .bx:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+    transform: 0.3s;
+}
+
+.menu-icon div{
+    display: block;
+    background: var(--bg-color);
+    height: 2px;
+    width: 23px;
+    transition: 0.3s;
+}
+
+.move .line1{
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2{
+    opacity: 0;
+}
+
+.move .line3{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.membership-container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin: 100px auto 0; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 25px;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 30px;
+}
+
+.membership-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+}
+
+.normal-membership {
+    margin: 10px;
+    background-color: #c1c9cd; 
+}
+
+.premium-membership {
+    margin: 10px;
+    background-color: #cebfbf; 
+}
+
+.benefits {
+    margin-top: 30px;
+    text-align: center;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #4b4558;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4b4558;
+}
+
+
+.footer-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem !important;
+}
+
+.footer .logo{
+    color: var(--main-color);
+}
+
+.social{
+    display: flex;
+    align-items: center;
+}
+
+.social a{
+    font-size: 24px;
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.social a:hover{
+    color:var(--second-color);
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.footer-box a{
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.copyright{
+    padding: 30px;
+    color: var(--main-color);
+    text-align: center;
+}

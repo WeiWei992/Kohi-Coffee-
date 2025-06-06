@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Settings</title>
+        <link href="navbar.css" rel="stylesheet">
+        <link href="Settings.css" rel="stylesheet">
+        <script src="Settings.js"></script>
+
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+        <link href="resolution.css" rel="stylesheet">
+
+    </head>
+    <div id="resolution">
+    <body>
+        <header>
+            <div class="nav nav-container">
+                <a href="" class="logo">Kōhī</a>
+                <div class="navbar">
+                    <a href="mp_index.html" class="nav-link">Home</a>
+                    <a href="mp_abtus.html" class="nav-link">About Us</a>
+                    <a href="FAQs.html" class="nav-link">FAQ</a>
+                    <a href="Drinks Menu.html" class="nav-link">Menu</a>
+                    <a href="mp_membership.html" class="nav-link">Membership</a>
+                    <a href="mp_rewards.html" class="nav-link">Rewards</a>
+                    <a href="coffeeaccountpage.html" class="nav-link">Login/Sign Up</a>
+                </div>
+                <div class="nav-icons">
+                    <a href="Settings.html"><i class='bx bx-user'></i></a>
+                    <a href="Ordering.html"><i class='bx bx-shopping-bag'></i></a>
+                    <div class="menu-icon">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <nav class="settings_nav"></nav>
+
+    <div class="settings_ui">
+
+        
+        <div class="settings_options">
+            <h2 id="settings_header">Settings</h2>
+            <button class="options_button button_1 active_button" onclick="displayTabs(0)">Account</button>
+            <button class="options_button button_2" onclick="displayTabs(1)">Payment Details</button>
+            <button class="options_button button_3" onclick="displayTabs(2)">Site Preferences</button>
+            <!-- <button class="options_button button_4" onclick="displayTabs(3)">Sign out</button> -->
+
+        </div>
+
+        <div class="settings_content">
+            <!--Tab 1-->
+            <div class="tab_1">
+                <div class="tab_container">
+                    <div id="settings_username" class="account_details">
+                        <p id="settings_username_display" class="small_font">Display name:</p>
+                        <div class="inline">
+                            <p>John Coffee</p>
+                            <button class="settings_account_edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="settings_email" class="account_details">
+                        <p id="account_section" class="small_font">E-mail:</p>
+                        <div class="inline">
+                            <p>JohnCoffee@gmail.com</p>
+                            <button class="settings_account_edit">Edit</button>
+                        </div>                    
+                    </div>
+
+                    <hr>
+
+                    <div id="settings_password" class="account_details">
+                        <p id="account_section" class="small_font">Password:</p>
+                        <div class="inline">
+                            <p>Coffee123</p>
+                            <button class="settings_account_edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div id="settings_date_of_birth" class="account_details">
+                        <p id="account_section" class="small_font">Date of Birth: </p>
+                        <div class="inline">
+                            <p>20/05/1972</p>
+                            <button class="settings_account_edit">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tab 2-->
+            <div class="tab_2">
+                <div class="tab_container" id="tab_2_container">
+                    <div id="payment_methods">
+                        <h2 id="payment_title">Payment Methods</h2>
+                        <hr>
+                        <p id="payment_content">You have not added a payment method</p>
+                        <button id="payment_add">Add Payment Method</button>
+                    </div>
+                    <div id="purchase_history">
+                        <h2 id="purchase_title">Purchase History</h2>
+                        <hr>
+                        <p id="purchase_content">You have not made any purchases with your account</p> 
+                    </div>
+                </div>
+            </div>
+
+            <!--Tab 3-->
+            <div class="tab_3">
+                <div class="tab_container">
+                    <div class="languages">
+                        <h2>Languages</h2>
+                        <div id="english" class="preferences_options">
+                            <label for="languages_option">English</label>
+                            <input type="radio" name="languages_option" class="radio">
+                        </div>
+
+                        <div id="chinese" class="preferences_options">
+                            <label for="languages_option">Chinese</label>
+                            <input type="radio" name="languages_option" class="radio">
+                        </div>
+
+                        <div id="malay" class="preferences_options">
+                            <label for="languages_option">Malay</label>
+                            <input type="radio" name="languages_option" class="radio">
+                        </div>
+
+                        <div id="japanese" class="preferences_options">
+                            <label for="languages_option">Japanese</label>
+                            <input type="radio" name="languages_option" class="radio">
+                        </div>
+
+                        <div id="korean" class="preferences_options">
+                            <label for="languages_option">Korean</label>
+                            <input type="radio" name="languages_option" class="radio">
+                        </div>
+                    </div>
+                    <div class="themes">
+                        <h2>Theme</h2>
+                        <div id="light_mode" class="preferences_options">
+                            <label for="themes_option">Light</label>
+                            <input type="radio" name="themes_option" class="radio">
+                        </div>      
+                         <div id="dark_mode" class="preferences_options">
+                            <label for="themes_option">Dark</label>
+                            <input type="radio" name="themes_option" class="radio">
+                        </div>      
+                    </div>
+                </div>
+            </div>
+
+            <!--Tab 4-->
+            <!-- <div class="tab_4">
+                <div class="tab_container">
+                    <h1>Do you wish to sign out?</h1>
+                
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+    <script src="Settings.js"></script>
+</body>
+</div>
+</html>

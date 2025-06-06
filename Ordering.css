@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;100&display=swap');
+@import url('https://fonts.google.com/noto/specimen/Noto+Serif+JP?preview.text=kohi');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    /* max-width: 100vw; */
+    /* background-image: url('https://plus.unsplash.com/premium_photo-1674939149163-7529afaf2a59?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx'); */
+
+    background-size:contain;
+    background-color: #fff;
+}
+
+/* .checkout_nav {
+    height: 12%;
+    background-color: whitesmoke;
+    color: black;
+    width: 100vw;
+    background-image: url('https://plus.unsplash.com/premium_photo-1674939149163-7529afaf2a59?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx');
+    text-align: center;
+
+} */
+div.checkout_body {
+    /* width: ; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(pngtree-coffee-beans-desktop-coffee-mug-picture-image_2393774.jpg);
+    /* background-image: url('https://png.pngtree.com/background/20230412/original/pngtree-coffee-beans-desktop-coffee-mug-picture-image_2393774.jpg'); */
+    background-size: cover;
+    /* background-image: url('https://wallpapers.com/images/hd/coffee-background-l90nhet6m4trwc3q.jpg'); */
+}
+
+div.checkout_container {
+    display: flex;
+    border: 10px solid #332211;
+    padding: 0.5rem 3rem 2rem 3rem;
+    border-radius: 10px;
+    width: 35%;
+    height: auto;
+    background-color: #a18167;
+    color:#bb9d7a;
+    font-family: 'Noto Sans Japanese';
+    align-items: center;
+    flex-direction: column;
+}
+
+h1.checkout_title {
+    vertical-align: top;
+    margin-bottom: 10px;
+    color: #332211;
+}
+
+div.item_box {
+    /* display: ; */
+    width: 100%;
+    /* border: 1px solid black; */
+    /* padding: ; */
+}
+
+div.item {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: beige;
+}
+
+
+div.row_1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.row_2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+p.quantity {
+    color: gray;
+}
+
+div.total {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #332211;
+
+}
+
+h2#total_price {
+    margin-right: 10px;
+}
+
+/* footer {
+    height: 10%;
+    background-image: url('https://plus.unsplash.com/premium_photo-1674939149163-7529afaf2a59?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx');
+    background-color: transparent;
+} */

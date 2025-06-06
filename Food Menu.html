@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food Menu</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="resolution.css" rel="stylesheet">
+
+  <style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;100&display=swap');
+    @import url('https://fonts.google.com/noto/specimen/Noto+Serif+JP?preview.text=kohi');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+    
+    .cart-button {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      background-color: #654333;
+      color: white;
+      padding: 13px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .cart-badge {
+      background-color: rgb(58, 55, 55);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .menu-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+.heading p{
+    max-width: 550px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-family: var(--noto-font);
+    margin-top: 1rem;
+}
+
+
+.menu-box{
+    background: #fff8f7;
+    padding: 20px;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.menu-item .bx-heart{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px;
+    background: #fff;
+    color: var(--second-color);
+    border-radius: 50%;
+}
+
+.menu-item img{
+    margin-top: 1rem;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-item p{
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-family: var(--noto-font);
+    padding: 2px 7px;
+    border: 1px solid var(--text-alter-color);
+    border-radius: 1rem;
+    background-color: #fff;
+    margin: 1rem 0 0.5rem;
+}
+
+.menu-item h2{
+    color: var(--main-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.menu-item{
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.menu-item span{
+    color: var(--main-color);
+}
+
+.menu-item .bx{
+    padding: 8px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-item .bx:hover{
+    background: var(--main-color);
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu-item .bx-heart{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px;
+    background: #fff;
+    color: var(--second-color);
+    border-radius: 50%;
+}
+
+
+    .btn{
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+    border-radius: 2rem;
+    background-color: var(--text-color);
+}
+
+  .btn span{
+    font-family: 'Poppins', sans-serif;
+    color: var(--bg-color);
+    text-transform: uppercase;
+  }
+
+  .btn .bx{
+    font-size: 20px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: 5px;
+    border-radius: 50%;
+    transform: rotate(60deg);
+    }
+
+  .btn span:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+
+    .footer-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+    }
+
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem !important;
+    margin-left: 300px;
+  }
+
+.footer .logo{
+    color: var(--main-color);
+}
+
+.social{
+    display: flex;
+    align-items: center;
+}
+
+.social a{
+    font-size: 24px;
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.social a:hover{
+    color:var(--second-color);
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.footer-box a{
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.copyright{
+    padding: 30px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #000; 
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.left-sidebar .nav-link {
+    color: #ddbe9b;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Japanese',sans-serif;
+}
+
+:root{
+    --main-color: #54372a;
+    --second-color: #df582e;
+    --text-color: #060413;
+    --container-color: #f8e4be;
+    --bg-color:#f9f6f2;
+    --text-alter-color: #94908e;
+    --noto-font: 'Noto Sans Japanese';
+
+}
+body{
+    color: var(--text-color-color);
+    background: var(--bg-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+section{
+    padding: 3rem 0 2rem;
+}
+
+.nav-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+header{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 17px 20px;
+    border-radius: 2rem;
+    margin-left: 350px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:#ddbe9b;
+    font-family: 'Noto Sans Japanese';
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    z-index: 1001;
+}
+
+.nav-link {
+    font-size: 0.88rem;
+    color: #ddbe9b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav-icons .bx{
+    color: #ddbe9b;
+    font-size: 20px;
+}
+
+.nav-icons .bx:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+    transform: 0.3s;
+}
+
+.menu-icon div{
+    display: block;
+    background: var(--bg-color);
+    height: 2px;
+    width: 23px;
+    transition: 0.3s;
+}
+
+.move .line1{
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2{
+    opacity: 0;
+}
+
+.move .line3{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+     background-color: #ddc0b4;;
+      background-size: 100%;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 50%;
+      border-radius: 10px;
+    }
+
+    .menu-content {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(300px,1fr));
+      grid-gap: 20px 40px;
+      margin-left: 300px;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(112, 66, 20); 
+      margin-top: 120px;
+      margin-left: 280px;
+      font-size: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(112, 66, 20);
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 30px;
+    }
+
+    .menu-item {
+      text-align: center;
+      margin-bottom: 20px;
+      color: rgb(139, 69, 19); 
+      position: relative;
+      border: 2px solid #ab8d68;
+      border-radius: 80px;
+      padding: 20px;
+      transition: border-color 0.3s ease;
+      border-width: 3.1px;
+    }
+
+    .menu-item:hover {
+      border-color: #E1D6C2;
+      border-width: 5px;
+      background-color: #E1D6C2;
+    }
+
+    .item-name {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .item-description {
+      font-family: 'Lato', sans-serif;
+      margin-top: 0.5rem;
+    }
+    .item-price {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<div id="resolution">
+<body>
+  <header>
+    <div class="nav nav-container">
+        <a href="" class="logo">Kōhī</a>
+        <div class="navbar">
+            <a href="mp_home.html" class="nav-link">Home</a>
+            <a href="mp_abtus.html" class="nav-link">About Us</a>
+            <a href="FAQs.html" class="nav-link">FAQ</a>
+            <a href="Drinks Menu.html" class="nav-link">Menu</a>
+            <a href="mp_membership.html" class="nav-link">Membership</a>
+            <a href="mp_rewards.html" class="nav-link">Rewards</a>
+            <a href="coffeeaccountpage.html" class="nav-link">Login/Sign Up</a>
+        </div>
+        <div class="nav-icons">
+            <a href="Settings.html"><i class='bx bx-user'></i></a>
+            <a href="Ordering.html"><i class='bx bx-shopping-bag'></i></a>
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+  <header>
+    <div class="left-sidebar">
+      <h2><a href="Drinks Menu.html" class="nav-link"><strong>Drinks</strong></a></h2><br>
+      <a href="#" class="nav-link">Espresso</a>
+      <a href="#" class="nav-link">Cuppucino</a>
+      <a href="#" class="nav-link">Latte</a>
+      <a href="#" class="nav-link">Flat White</a>
+      <a href="#" class="nav-link">Chai Latte</a>
+      <a href="#" class="nav-link">Green Tea Matcha Latte</a>
+      <a href="#" class="nav-link">Hot Chocolate</a>
+      <a href="#" class="nav-link">Berry Blast Smoothie</a>
+      <a href="#" class="nav-link">Tropical Smoothie</a>
+      <a href="#" class="nav-link">Chocolate Banana Smoothie</a>
+      <a href="#" class="nav-link">Mango Tango Smoothie</a>
+      <a href="#" class="nav-link">Blueberry Smoothie</a>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  
+  <h1>Food Menu</h1>
+  <div class="menu-content">
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Oreo Cheesecake</div>
+      <img src="oreo cheesecake.jpeg" alt="Oreo Cheesecake">
+      <div class="item-description">A velvety cream cheese filling with crushed Oreo cookies, nestled atop a chocolaty Oreo crust </div>
+      <div class="item-price">RM10.30</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Lemon Burst Bliss</div>
+      <img src="lemon cake.jpeg" alt="Lemon Burst Bliss">
+      <div class="item-description"> Lemon-flavored cake with layers of zesty lemon curd and a light lemon frosting, adorned with candied lemon peel</div>
+      <div class="item-price">RM9.00</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Caramel Pecan<br>Paradise</div>
+      <img src="caramel pecan.jpeg" alt="Caramel Pecan Cake">
+      <div class="item-description"> A caramel-infused cake featuring layers of pecans and caramel filling, finished with a caramel drizzle and a sprinkle of toasted pecans </div>
+      <div class="item-price">RM11.50</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Almond Joy Delight</div>
+      <img src="almond macaron.jpg" alt="Almond Macaron with Ganache">
+      <div class="item-description">Almond-infused macaroons with a layer of rich chocolate ganache </div>
+      <div class="item-price">RM2.50</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Mango Tango</div>
+      <img src="mango macaroon.jpeg" alt="Mango Tango Macaron">
+      <div class="item-description">Tropical-inspired macaroons with a burst of mango flavor </div>
+      <div class="item-price">RM2.50</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Coffee Caramel Crunch</div>
+      <img src="caramel coffee macaron.jpeg" alt="Coffee flavor macaron with Caramel">
+      <div class="item-description">Macaroons infused with coffee flavor and filled with a gooey caramel center </div>
+      <div class="item-price">RM2.50</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Dark Chocolate<br>Orange Infusion</div>
+      <img src="dark chocolate with orange zest.jpeg" alt="Dark Chocolate macaron with orange zest">
+      <div class="item-description">Macaroons dipped in dark chocolate and infused with orange zest </div>
+      <div class="item-price">RM3.00</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">French Fries</div>
+      <img src="french fries.jpeg" alt="French Fries">
+      <div class="item-description">Cut potatoes that are deep-fried until golden and crispy, served with ketchup, mayonnaise, or other dipping sauces </div>
+      <div class="item-price">RM7.00</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Potato Wedges</div>
+      <img src="potato wedges.jpeg" alt="Potato wedges">
+      <div class="item-description">Thick wedges of potatoes seasoned and baked or fried until crispy on the outside and tender on the inside </div>
+      <div class="item-price">RM8.00</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Hash Brown</div>
+      <img src="Hash Browns.jpg" alt="Hash Browns">
+      <div class="item-description">Grated or finely chopped potatoes that are seasoned, pressed, and fried until golden brown and crispy </div>
+      <div class="item-price">RM6.00</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Potato Samosas</div>
+      <img src="potato samosas.jpg" alt="Potato Samosas">
+      <div class="item-description">Triangular pastry pockets filled with a mixture of spiced mashed potatoes and peas, deep-fried until golden brown </div>
+      <div class="item-price">RM8.50</div>
+      
+    </div>
+    
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Potato and Cheese<br>Pierogi</div>
+      <img src="potato and cheese pierogi.jpeg" alt="Potato and Cheese PI">
+      <div class="item-description">Dumplings filled with a mixture of mashed potatoes and cheese, pan-fried, and served with sour cream. </div>
+      <div class="item-price">RM8.00</div>
+      
+    </div>
+  </div>
+
+  <br><br><hr>
+  <section class="footer footer-container">
+    <div class="footer-box">
+        <a href="#" class="logo">Kohi</a>
+        <div class="social">
+            <a href=""><i class='bx bxl-facebook-circle'></i></a>
+            <a href=""><i class='bx bxl-twitter' ></i></a>
+            <a href=""><i class='bx bxl-instagram' ></i></a>
+            <a href=""><i class='bx bxl-tiktok' ></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>About</h3>
+        <a href="mp_abtus.html">Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+    </div>
+    <div class="footer-box">
+        <h3>Services</h3>
+        <a href="payment_styles.css">Payment Options</a>
+        <a href="mp_membership.html">Memberships and Rewards</a>
+        <a href="mp_contact.html">Contact Us</a>
+    </div>
+  </section>
+  </body>
+  <p class="copyright">&#169; KOHI</p>
+
+  <button class="cart-button" onclick="addToCart()">
+    Add to Cart
+    <span id="cart-badge" class="cart-badge">0</span>
+  </button>
+  
+</body>
+</div>
+</html>

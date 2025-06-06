@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drink Menu</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link href="resolution.css" rel="stylesheet">
+
+
+  <style>
+
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;100&display=swap');
+    @import url('https://fonts.google.com/noto/specimen/Noto+Serif+JP?preview.text=kohi');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+    .cart-button {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      background-color: #654333;
+      color: white;
+      padding: 13px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .cart-badge {
+      background-color: rgb(58, 55, 55);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .menu-container{
+      max-width: 1060px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .heading p{
+      max-width: 550px;
+      width: 100%;
+      font-size: 0.9rem;
+      font-family: var(--noto-font);
+      margin-top: 1rem;
+    }
+
+
+    .menu-box{
+      background: #fff8f7;
+      padding: 20px;
+      border-radius: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-item .bx-heart{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px;
+      background: #fff;
+      color: var(--second-color);
+      border-radius: 50%;
+    }
+
+    .menu-item img{
+      margin-top: 1rem;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu-item p{
+      font-size: 0.7rem;
+      font-weight: 500;
+      font-family: var(--noto-font);
+      padding: 2px 7px;
+      border: 1px solid var(--text-alter-color);
+      border-radius: 1rem;
+      background-color: #fff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .menu-item h2{
+      color: var(--main-color);
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .menu-item{
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .menu-item span{
+      color: var(--main-color);
+    }
+
+    .menu-item .bx{
+      padding: 8px;
+      background: var(--second-color);
+      color: var(--bg-color);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .menu-item .bx:hover{
+      background: var(--main-color);
+      transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .menu-item .bx-heart{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px;
+      background: #fff;
+      color: var(--second-color);
+      border-radius: 50%;
+    }
+
+    .btn{
+      max-width: 300px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.5rem;
+      border-radius: 2rem;
+      background-color: var(--text-color);
+    }
+
+    .btn span{
+      font-family: 'Poppins', sans-serif;
+      color: var(--bg-color);
+      text-transform: uppercase;
+    }
+
+    .footer-container{
+      max-width: 1060px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .footer{
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 3rem !important;
+      margin-left: 300px;
+    }
+
+    .footer .logo{
+      color: var(--main-color);
+    }
+
+.social{
+    display: flex;
+    align-items: center;
+}
+
+.social a{
+    font-size: 24px;
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.social a:hover{
+    color:var(--second-color);
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.footer-box a{
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.copyright{
+    padding: 30px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.left-sidebar .nav-link {
+    color: #ddbe9b;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Japanese',sans-serif;
+}
+
+:root{
+    --main-color: #54372a;
+    --second-color: #df582e;
+    --text-color: #060413;
+    --container-color: #f8e4be;
+    --bg-color:#f9f6f2;
+    --text-alter-color: #94908e;
+    --noto-font: 'Noto Sans Japanese';
+
+}
+body{
+    color: var(--text-color-color);
+    background: var(--bg-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+
+section{
+    padding: 3rem 0 2rem;
+}
+
+.nav-container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+
+header{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 17px 20px;
+    border-radius: 2rem;
+    margin-left: 350px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color:#ddbe9b;
+    font-family: 'Noto Sans Japanese';
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 0.88rem;
+    color: #ddbe9b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.nav-icons .bx{
+    color: #ddbe9b;
+    font-size: 20px;
+}
+
+.nav-icons .bx:hover{
+    color:#ab8d68;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+    transform: 0.3s;
+}
+
+.menu-icon div{
+    display: block;
+    background: var(--bg-color);
+    height: 2px;
+    width: 23px;
+    transition: 0.3s;
+}
+
+.move .line1{
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2{
+    opacity: 0;
+}
+
+.move .line3{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+     background-color: #ddc0b4;
+      background-size: 100%;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 50%;
+      border-radius: 10px;
+    }
+
+    .menu-content {
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax(300px,1fr));
+      grid-gap: 20px 40px;
+      margin-left: 300px;
+      justify-content: space-between;
+      gap: 2rem;
+      border-radius: 1.5rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(112, 66, 20); 
+      margin-top: 120px;
+      margin-left: 280px;
+      font-size: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: rgb(112, 66, 20);
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 30px;
+    }
+
+    .menu-item {
+      text-align: center;
+      margin-bottom: 20px;
+      color: rgb(139, 69, 19); 
+      position: relative;
+      border: 2px solid #ab8d68;
+      border-radius: 80px;
+      padding: 20px;
+      transition: border-color 0.3s ease;
+      border-width: 3.1px;
+    }
+
+    .menu-item:hover {
+      border-color: #E1D6C2;
+      border-width: 5px;
+      background-color: #E1D6C2;
+    }
+
+    .item-name {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .item-description {
+      font-family: 'Lato', sans-serif;
+      margin-top: 0.5rem;
+    }
+    .item-price {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+  </style>
+</head>
+<div id="resolution">
+<body>
+  <header>
+    <div class="nav nav-container">
+        <a href="" class="logo">Kōhī</a>
+        <div class="navbar">
+            <a href="mp_home.html" class="nav-link">Home</a>
+            <a href="mp_abtus.html" class="nav-link">About Us</a>
+            <a href="FAQs.html" class="nav-link">FAQ</a>
+            <a href="Food Menu.html" class="nav-link">Menu</a>
+            <a href="mp_membership.html" class="nav-link">Membership</a>
+            <a href="mp_rewards.html" class="nav-link">Rewards</a>
+            <a href="coffeeaccountpage.html" class="nav-link">Login/Sign Up</a>
+        </div>
+        <div class="nav-icons">
+            <a href="Settings.html"><i class='bx bx-user'></i></a>
+            <a href="Ordering.html"><i class='bx bx-shopping-bag'></i></a>
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <header>
+    <div class="left-sidebar">
+      <h2><a href="Food Menu.html" class="nav-link"><strong>Food</strong></a></h2><br>
+        <a href="#" class="nav-link">Oreo Cheesecake</a>
+        <a href="#" class="nav-link">Lemon Burst Bliss</a>
+        <a href="#" class="nav-link">Caramel Pecan Paradise</a>
+        <a href="#" class="nav-link">Almond Joy Delight</a>
+        <a href="#" class="nav-link">Mango Tango</a>
+        <a href="#" class="nav-link">Caramel Coffee Crunch</a>
+        <a href="#" class="nav-link">Dark Chocolate Orange Infusion</a>
+        <a href="#" class="nav-link">French Fries</a>
+        <a href="#" class="nav-link">Potato Wedges</a>
+        <a href="#" class="nav-link">Hash Brown</a>
+        <a href="#" class="nav-link">Potato Samosas</a>
+        <a href="#" class="nav-link">Potato and Cheese Pierogi</a>
+    </div>
+  </header>
+
+
+  <div class="overlay"></div>
+
+  <h1>Drink Menu</h1>
+  <div class="menu-content">
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Espresso</div>
+      <img src="espresso.jpg" alt="A cup of Espresso">
+      <div class="item-description">A strong and concentrated coffee made by forcing hot water through finely-ground coffee beans </div>
+      <div class="item-price">RM6.90</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Cuppucino</div>
+      <img src="cuppucino.jpeg" alt="A cup of Cuppucino">
+      <div class="item-description"> A classic coffee drink composed of equal parts espresso, steamed milk, and milk foam. It has a creamy and frothy texture</div>
+      <div class="item-price">RM7.00</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Latte</div>
+      <img src="latte.jpg" alt="A cup of Latte">
+      <div class="item-description"> A coffee drink made with espresso and steamed milk, has a milder coffee flavor compared to a cappuccino </div>
+      <div class="item-price">RM10.90</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Flat White</div>
+      <img src="flat white.jpg" alt="A cup of Flat White">
+      <div class="item-description">Consists of espresso and microfoam (steamed milk with fine, velvety bubbles) </div>
+      <div class="item-price">RM10.90</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Chai Latte</div>
+      <img src="chai latte.jpg" alt="A cup of Chai Latte">
+      <div class="item-description">A spiced tea drink made with black tea, steamed milk, and a blend of spices such as cinnamon, cardamom, and cloves </div>
+      <div class="item-price">RM11.70</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Matcha Latte</div>
+      <img src="green tea matcha latte.jpg" alt="A cup of Green Tea Matcha Latte ">
+      <div class="item-description">A Japanese-inspired drink made with finely ground green tea powder (matcha), steamed milk (can be sweetened) </div>
+      <div class="item-price">RM14.00</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Hot Chocolate</div>
+      <img src="hot chocolate.jpg" alt="A cup of Hot Chocolate">
+      <div class="item-description">A comforting drink made with hot milk and melted chocolate or cocoa powder (can be topped with whipped cream or chocolate shavings) </div>
+      <div class="item-price">RM13.90</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Berry Blast Smoothie</div>
+      <img src="barry blast smoothie.jpg" alt="A cup of a Berry Blast Smoothie">
+      <div class="item-description">Ingredients: Mixed berries (strawberries, blueberries, raspberries), banana, yogurt, honey, and ice. </div>
+      <div class="item-price">RM16.50</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Tropical Paradise<br>Smoothie</div>
+      <img src="tropical paradise smoothie.jpg" alt="A cup of a Tropical Paradise Smoothie">
+      <div class="item-description">TIngredients: Pineapple, mango, banana, coconut milk, and ice </div>
+      <div class="item-price">RM17.00</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Chocolate Banana<br>Bliss Smoothie</div>
+      <img src="chocolate banana bliss smoothie.jpg" alt="A cup of a Chocolate Banana Bliss Smoothie">
+      <div class="item-description">Ingredients: Banana, cocoa powder, almond milk, peanut butter, and ice </div>
+      <div class="item-price">RM14.90</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Mango Tango<br>Smoothie</div>
+      <img src="mango tango smoothie.jpg" alt="Mnago Tango Smoothie">
+      <div class="item-description">Ingredients: Mango, orange juice, vanilla yogurt, honey, and ice. </div>
+      <div class="item-price">RM15.60</div>
+      
+    </div>
+
+    <div class="menu-item">
+      <i class='bx bx-heart' ></i>
+      <div class="item-name">Blueberry Bliss<br>Smoothie</div>
+      <img src="blueberry bliss smoothie.jpg" alt="A cup of a Blueberry Blast Smoothie">
+      <div class="item-description">Ingredients: Blueberries, banana, almond milk, chia seeds, and ice. </div> 
+      <div class="item-price">RM17.90</div>
+      
+    </div>
+
+  </div>
+
+ <br><br><hr>
+  <section class="footer footer-container">
+    <div class="footer-box">
+        <a href="#" class="logo">Kohi</a>
+        <div class="social">
+            <a href=""><i class='bx bxl-facebook-circle'></i></a>
+            <a href=""><i class='bx bxl-twitter' ></i></a>
+            <a href=""><i class='bx bxl-instagram' ></i></a>
+            <a href=""><i class='bx bxl-tiktok' ></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>About</h3>
+        <a href="mp_abtus.html">Us</a>
+        <a href="#">FAQ</a>
+        <a href="#">Blog</a>
+    </div>
+    <div class="footer-box">
+        <h3>Services</h3>
+        <a href="payment_styles.css">Payment Options</a>
+        <a href="mp_membership.html">Memberships and Rewards</a>
+        <a href="mp_contact.html">Contact Us</a>
+    </div>
+</section>
+</body>
+<p class="copyright">&#169; KOHI</p>
+
+<button class="cart-button" onclick="addToCart()">
+  Add to Cart
+  <span id="cart-badge" class="cart-badge">0</span>
+</button>
+
+
+</body>
+</div>
+</html>
